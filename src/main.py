@@ -20,7 +20,7 @@ def private_key(update, context):
 
 if __name__ == "__main__":
 
-    updater = Updater("5585187752:AAE9alu2Zaji6bYCjAx95RTCN8hqWPtqYqY", use_context=True)
+    updater = Updater("", use_context=True)
     dp = updater.dispatcher
 
     # Commands
