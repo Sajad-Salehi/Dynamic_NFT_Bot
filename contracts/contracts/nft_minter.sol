@@ -48,8 +48,6 @@ contract nftMinter is ERC721URIStorage {
 
     function growNFT(uint256 tokenId) public {
        
-        address user = ERC721.ownerOf(tokenId);
-        require(msg.sender == user, "You are not the owner of token");
         require(id_to_currentURI[tokenId] < 2, "It id impossible to grow more");
 
         uint256 current_uri = id_to_currentURI[tokenId] + 1;
