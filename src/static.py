@@ -1,6 +1,5 @@
 import os
 import json
-import ipfshttpclient
 from web3 import Web3
 from web3.middleware import geth_poa_middleware
 
@@ -101,8 +100,15 @@ def set_ipfs_Uri(metadata_1, metadata_2, metadata_3):
     return trx_hash
 
 
-def upload_ipfs(nft_data_1, nft_data_2, nft_data_3):
 
-    #client = ipfshttpclient.connect(config['IPFS_CONNECT_URL'])
-    #file_info = client.add(nft_file)
-    #nft_file_url = app.config['IPFS_FILE_URL'] + file_info['Hash']
+def get_address(private_key):
+
+    w3 = Web3(Web3.HTTPProvider(os.getenv('WEB3_PROVIDER')))
+    w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+
+    PA=w3.eth.account.from_key(private_key)
+
+    # Get public address from a signer wallet
+    Public_Address=PA.address
+    return Public_Address
+
