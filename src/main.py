@@ -1,49 +1,69 @@
-from telegram import *
-from telegram.ext import *
-from requests import *
-from private_key import set_private_key
+import os
+import telebot
+from bottons import keyboard1, keyboard2, keyboard3
+from private_key import set_private_key, get_user_info
+from responses import myWallet, myAccount, addAccount, getPrivateKey, static, dynamic, mint
 
 
-def startCommand(update, context):
+api_key = os.getenv('API_KEY')
+bot = telebot.TeleBot(api_key)
 
-    update.message.reply_text("Hi! Welcome to NFT Minter Bot.\n\n\nPlease Enter Your Wallet (Private Key) :")
+
+@bot.message_handler(commands=['start'])
+def startCommand(message):
+
+    text = "Hi welcome to NFT minter bot.\nFirst, please set up your Wallet."
+    bot.send_message(message.chat.id, text, reply_markup=keyboard1)
+
+
+@bot.message_handler(func=myWallet)
+def MyWallet(message):
+
+    text = '1.Add Account:\n --> Set up your wallet account\n\n2. My Wallet Account:\n --> See your wallet info'
+    bot.send_message(message.chat.id, text, reply_markup=keyboard2)
+
+
+@bot.message_handler(func=myAccount)
+def MyAccount(message):
+
+    username = message.from_user.username
+    wallet_addres, private_key = get_user_info(username)
+    text = f'Username: @{username}\n\nWallet Address: {wallet_addres}\n\nPrivate Key: {private_key}'
+    bot.send_message(message.chat.id, text, reply_markup=keyboard1)
+
+
+@bot.message_handler(func=addAccount)
+def addAccount(message):
+
+    text = 'Please enter your (Private key): '  
+    bot.send_message(message.chat.id, text)
     
 
-def error(update, context):
+@bot.message_handler(func=mint)
+def mintNFT(message):
 
-    print(f"Update {update} caused Error {context.error}")
+    bot.send_message(message.chat.id, 'Choose what kind of NFT do you want to mint: ', reply_markup=keyboard3)
 
+@bot.message_handler(func=getPrivateKey)
+def setPrivateKey(message):
 
-def get_private_key(update, context):
-
-    text = str(update.message.text)
-    print(text)
-
-    if len(text) != 64:
-        response = 'Invaild private key!'
-        update.message.reply_text(response)
-        text = str(update.message.text)
-
-    else:
-        response = "Great! Now you can mint your NFTs."
-        update.message.reply_text(response)
-
-        username = update.message.chat.username
-        set_private_key(text, username)
+    privateKey = message.text
+    username = message.from_user.username
+    set_private_key(username, privateKey)
+    text = 'Nice! Your wallet account was added successfully. Now you can start and mint your NFTs.'
+    bot.send_message(message.chat.id, text, reply_markup=keyboard1)
 
 
+@bot.message_handler(func=static)
+def MintStaticNFT(message):
 
-if __name__ == "__main__":
+    bot.send_message(message.chat.id, 'saaalm static')
 
-    updater = Updater("", use_context=True)
-    dp = updater.dispatcher
 
-    # Commands
-    dp.add_handler(CommandHandler('start', startCommand))
-    dp.add_handler(MessageHandler(Filters.text, get_private_key))
+@bot.message_handler(func=dynamic)
+def MintDynamicNFT(message):
 
-    dp.add_error_handler(error)
+    bot.send_message(message.chat.id, 'saaalam dynamic')
 
-    # Run the bot
-    updater.start_polling()
-    updater.idle()
+
+bot.polling()

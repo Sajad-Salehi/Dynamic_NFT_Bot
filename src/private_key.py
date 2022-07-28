@@ -31,13 +31,13 @@ def set_private_key(username, private_key):
 
 
 
-def get_private_key(username):
+def get_user_info(username):
 
     collection = connect_collection()
     
     x = {"id": username}
     user_info = collection.find_one(x)
 
-    return user_info['private_key']
+    return user_info['wallet_address'], user_info['private_key']
 
 
