@@ -41,13 +41,15 @@ contract nftMinter is ERC721URIStorage {
 
 
     function getItemId() public view returns(uint256) {
+
         uint256 id = _tokenId.current();
         return id;
     }
 
 
-    function growNFT(uint256 tokenId) public {
+    function growNFT(uint256 tokenId) private {
        
+
         require(id_to_currentURI[tokenId] < 2, "It id impossible to grow more");
 
         uint256 current_uri = id_to_currentURI[tokenId] + 1;
