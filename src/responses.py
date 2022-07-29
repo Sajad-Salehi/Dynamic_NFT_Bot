@@ -1,4 +1,3 @@
-from private_key import set_private_key, get_user_info
 
     
 def myWallet(message):
