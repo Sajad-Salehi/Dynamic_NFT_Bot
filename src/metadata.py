@@ -5,8 +5,8 @@ from userInfo import get_metadata
 
 def upload_file():
 
-    IPFS_CONNECT_URL = "/ip4/127.0.0.1/tcp/5001"
-    IPFS_FILE_URL = "https://ipfs.io/ipfs/"
+    IPFS_CONNECT_URL = ""
+    IPFS_FILE_URL = ""
 
     client = ipfshttpclient.connect(IPFS_CONNECT_URL)
 
@@ -21,8 +21,8 @@ def upload_file():
 
 def upload_metadata(username):
 
-    IPFS_CONNECT_URL = "/ip4/127.0.0.1/tcp/5001"
-    IPFS_FILE_URL = "https://ipfs.io/ipfs/"
+    IPFS_CONNECT_URL = ""
+    IPFS_FILE_URL = ""
 
     client = ipfshttpclient.connect(IPFS_CONNECT_URL)
     metadata = get_metadata(username)
