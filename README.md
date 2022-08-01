@@ -1,5 +1,5 @@
 # Dynamic_NFT_bot
-<h3>This is a Telegram bot that allowes you to mint dynamic NFTs.</h3><h4>I have create it by using Solidity, Chainlink keepers, OpenZeppelin and Python.</h4>
+<h3>This is a Telegram bot that allowes you to mint dynamic NFTs.</h3><h4>I have created this bot using Solidity, Chainlink keepers, OpenZeppelin, Python and telebot.</h4>
 
 <br/><br/>
 <p align="center">
