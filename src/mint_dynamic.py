@@ -2,20 +2,20 @@ import os
 import json
 import time
 from web3 import Web3
-from user_info import get_user_info
+from user_info import get_user_info, get_metadata_url
 from web3.middleware import geth_poa_middleware
 
 
 def connect_contract(username):
 
-    file = open('abi/staticMinter.json')
+    file = open('abi/dynamicMinter.json')
     data = json.load(file)
     abi = data['abi']
 
     user_info = get_user_info(username)
     private_key = user_info[1]
     wallet_address = user_info[0]
-    contract_address = '0xCAbE76e5d516d33C5ea000467A9F910bE158577D'
+    contract_address = '0x1B9dCCf17C37679D775771E640D046B9CB3DcC94'
 
 
     trx_info = {
@@ -42,14 +42,15 @@ def connect_contract(username):
 
 
 
-def mint_token(username, metadata_url):
+def mint_token_(username):
 
     trx_info = connect_contract(username)
+
     w3 = trx_info['w3']
-    Nft_Minter = trx_info['contract']
+    nftMinter = trx_info['contract']
 
-
-    create_nft = Nft_Minter.functions.mintNFT(metadata_url).buildTransaction(
+    # 1. make a transaction
+    create_nft = nftMinter.functions.mint_nft().buildTransaction(
         {
             "chainId": trx_info['rinkeby_chain_id'],
             "from": trx_info['wallet_address'],
@@ -60,17 +61,47 @@ def mint_token(username, metadata_url):
     # 2. sign the transaction
     sign_create_nft = w3.eth.account.sign_transaction(
         create_nft,
-        private_key=trx_info['private_key']
-        )
+        private_key=trx_info['private_key'])
 
 
     # 2. send the trnsaction
     trx_hash = w3.eth.send_raw_transaction(sign_create_nft.rawTransaction)
     trx_recipt = w3.eth.wait_for_transaction_receipt(trx_hash)
-    time.sleep(5)
-    token_id = Nft_Minter.functions.getItemId().call() 
-
-
+    time.sleep(4)
+    token_id = nftMinter.functions.getItemId().call() 
+    
     opensea_url = f"https://testnets.opensea.io/assets/rinkeby/{trx_info['contract_address']}/{token_id - 1}"
     return opensea_url
 
+
+def set_ipfs_Uri(username):
+
+    uri = get_metadata_url(username)
+    metadata_1 = uri[-3]
+    metadata_2 = uri[-2]
+    metadata_3 = uri[-1]
+
+    trx_info = connect_contract(username)
+    w3 = trx_info['w3']
+    nftMinter = trx_info['contract']
+
+    #Make transaction
+    setUri_trx = nftMinter.functions.set_uri(metadata_1, metadata_2, metadata_3).buildTransaction({
+
+        "chainId": trx_info['rinkeby_chain_id'],
+        "from": trx_info['wallet_address'],
+        "nonce": trx_info['nonce']
+    })
+
+    # 2. sign the transaction
+    sign_setUri_trx = w3.eth.account.sign_transaction(
+        setUri_trx,
+        private_key=trx_info['private_key'])
+
+
+    # 2. send the trnsaction
+    trx_hash = w3.eth.send_raw_transaction(sign_setUri_trx.rawTransaction)
+    trx_recipt = w3.eth.wait_for_transaction_receipt(trx_hash)
+    time.sleep(4)
+
+    return trx_hash
