@@ -15,7 +15,7 @@ def connect_contract(username):
     user_info = get_user_info(username)
     private_key = user_info[1]
     wallet_address = user_info[0]
-    contract_address = '0xCAbE76e5d516d33C5ea000467A9F910bE158577D'
+    contract_address = ''
 
 
     trx_info = {
