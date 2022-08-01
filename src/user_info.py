@@ -6,7 +6,7 @@ from pymongo import MongoClient
 
 def connect_collection():
 
-    client = MongoClient("mongodb+srv://sajad:03758403@cluster0.c15ip.mongodb.net/?retryWrites=true&w=majority")
+    client = MongoClient("")
     db = client['nft_minter_bot']
     collection = db['nft_minter_bot']
 
