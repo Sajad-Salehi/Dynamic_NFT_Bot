@@ -3,11 +3,15 @@
 
 <br/><br/>
 <p align="center">
-<img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/1.png" width="240" height="270">
-<img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/2.png" width="240" height="270">
-<img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/3.png" width="240" height="270">
+<img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/1.png" width="190" height="270">
+<img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/2.png" width="190" height="270">
+<img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/3.png" width="190" height="270">
 </p><br>
 
+<p align="center">
+<img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/4.png" width="290" height="300">
+<img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/5.png" width="290" height="300">
+</p><br>
 
 ## Prerequisites
 Please install or have installed the following:
