@@ -91,6 +91,10 @@ python3 main.py
 * ["Introduction to ERC721 standard"](https://medium.com/blockchannel/walking-through-the-erc721-full-implementation-72ad72735f3c) ERC721 standard tutrial
 * ["Getting Started with ChainLink Keepers"](https://medium.com/coinmonks/get-started-with-chainlink-keepers-477c391046d7) Chainlink keepers quickstart
 
+## Medium article
+* ["Check My Medium Article"](https://eth-brownie.readthedocs.io/en/stable/) Dynamic NFT minter bot article in Medium<br><br>
+
+
 
 ## License
 
