@@ -16,9 +16,9 @@
 ## Prerequisites
 Please install or have installed the following:
 
-- [python](https://www.python.org/downloads/)
+- [Python](https://www.python.org/downloads/)
 - [Telegram](https://telegram.org/)
-- [metamask](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjtl7Oi6N_4AhWei_0HHbjzDH4QjBB6BAgHEAE&url=https%3A%2F%2Fmetamask.io%2Fdownload%2F&usg=AOvVaw049ASZIf5umKu9KN8vjUeH)
+- [Metamask](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjtl7Oi6N_4AhWei_0HHbjzDH4QjBB6BAgHEAE&url=https%3A%2F%2Fmetamask.io%2Fdownload%2F&usg=AOvVaw049ASZIf5umKu9KN8vjUeH)
 
 
 ## Installation
@@ -54,6 +54,7 @@ pip install pyTelegramBotAPI
 Run this command to initalize ipfs:
 ```bash
 ipfs daemon 
+export IPFS_FILE_URL = "File_url"
 export IPFS_CONNECT_URL= "Connect_url"
 ```
 
@@ -78,3 +79,19 @@ export API_KEY= "Api_key"
 ```bash
 python3 main.py
 ```
+
+
+## Resources
+
+
+* ["Getting Started with Brownie"](https://medium.com/@iamdefinitelyahuman/getting-started-with-brownie-part-1-9b2181f4cb99) To get started with Brownie
+* ["Brownie documentation"](https://eth-brownie.readthedocs.io/en/stable/) For more in-depth information
+* ["Getting Started with IPFS"](https://medium.com/python-pandemonium/getting-started-with-python-and-ipfs-94d14fdffd10) Getting started with python and ipfs
+* ["Getting Started with web3.py"](https://medium.com/geekculture/interacting-with-ethereum-network-in-python-using-web3-py-part-4-73ee4c978626) Web3.py quickstart
+* ["Introduction to ERC721 standard"](https://medium.com/blockchannel/walking-through-the-erc721-full-implementation-72ad72735f3c) ERC721 standard tutrial
+* ["Getting Started with ChainLink Keepers"](https://medium.com/coinmonks/get-started-with-chainlink-keepers-477c391046d7) Chainlink keepers quickstart
+
+
+## License
+
+This project is licensed under the [MIT license](LICENSE).
