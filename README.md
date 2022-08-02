@@ -28,7 +28,7 @@ Please install or have installed the following:
 python -m pip install --user virtualenv
 python -m virtualenv --help
 ```
-
+<br>
 Or, if that doesn't work, via pipx
 ```bash
 pipx install virtualenv
@@ -42,7 +42,7 @@ cd venv/bin
 source activate
 ```
 
-After that you need install telebot, web3.py and ipfs that we're going to use it to store our metadata 
+<br/>After that you need install telebot, web3.py and ipfs that we're going to use it to store our metadata 
 ```bash
 pip install web3
 pip install eth-brownie
@@ -50,3 +50,31 @@ pip install ipfshttpclient
 pip install pyTelegramBotAPI
 ```
 
+# Usage
+Run this command to initalize ipfs:
+```bash
+ipfs daemon 
+export IPFS_CONNECT_URL= "Connect_url"
+```
+
+<br>Deploy the smart contract using brownie:<br>
+First clone this repository and then deploy the smart contract. I prefer to use eth-brownie, but you can use whatever you want.
+```bash
+cd ../contracts
+brownie compile
+brownie run scripts/deploy_dynamic.py --network <NETWORK>
+brownie run scripts/deploy_static.py --network <NETWORK>
+```
+
+<br>Now you need to set your Api_key and web3_provider(Alchemy or Infura)<br>
+Use @botFather to create your bot and get Api_key
+```bash
+export WEB3_PROVIDER= "Web3_provider"
+export API_KEY= "Api_key"
+```
+
+
+<br>Finally use this command to run the bot.
+```bash
+python3 main.py
+```
