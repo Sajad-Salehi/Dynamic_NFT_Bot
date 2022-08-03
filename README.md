@@ -92,7 +92,7 @@ python3 main.py
 * ["Getting Started with ChainLink Keepers"](https://medium.com/coinmonks/get-started-with-chainlink-keepers-477c391046d7) Chainlink keepers quickstart
 
 ## Medium article
-* ["Check My Medium Article"](https://eth-brownie.readthedocs.io/en/stable/) Dynamic NFT minter bot article in Medium<br><br>
+* ["Check My Medium Article"](https://eth-brownie.readthedocs.io/en/stable/) How to build a Dynamic NFT minter bot using Solidity and Python?<br><br>
 
 
 
