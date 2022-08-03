@@ -9,7 +9,7 @@
 </p><br>
 
 <p align="center">
-<img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/4.png" width="290" height="300">
+<img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/6.png" width="290" height="300">
 <img src="https://github.com/Sajad-Salehi/Dynamic_NFT_Bot/blob/main/images/5.png" width="290" height="300">
 </p><br>
 
