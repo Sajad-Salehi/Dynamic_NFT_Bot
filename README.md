@@ -93,7 +93,8 @@ python3 main.py
 
 ## Medium article
 * ["Check My Medium Article"](https://medium.com/@sajadsolidity/how-to-create-a-dynamic-nft-minter-bot-using-solidity-and-python-pt-1-c719a37b5b1f) How to build a Dynamic NFT minter bot using Solidity and Python? --Part 1.
-* ["Check My Medium Article"](https://medium.com/@sajadsolidity/how-to-create-a-dynamic-nft-minter-bot-using-solidity-and-python-pt-2-f994a75cf8ee) How to build a Dynamic NFT minter bot using Solidity and Python? --Part 2.<br><br>
+* ["Check My Medium Article"](https://medium.com/@sajadsolidity/how-to-create-a-dynamic-nft-minter-bot-using-solidity-and-python-pt-2-f994a75cf8ee) How to build a Dynamic NFT minter bot using Solidity and Python? --Part 2.
+* ["Check My Medium Article"](https://medium.com/@sajadsolidity/how-to-create-a-dynamic-nft-minter-bot-using-solidity-and-python-pt-3-e3865e54607a) How to build a Dynamic NFT minter bot using Solidity and Python? --Part 3.<br><br>
 
 
 
