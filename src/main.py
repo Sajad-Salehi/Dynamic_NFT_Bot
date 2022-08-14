@@ -2,10 +2,10 @@ import os
 import telebot
 from mint_static import mint_token
 from mint_dynamic import set_ipfs_Uri, mint_token_
-from upload_metadata import upload_file, upload_metadata
+from upload_metadata import *
 from bottons import keyboard1, keyboard2, keyboard3, keyboard4
-from user_info import set_private_key, get_user_info, set_metadata, check_user_wallet, add_dynamic_metadata
-from responses import aboutMe, myWallet, myAccount, addAccount, getPrivateKey, static, dynamic, mint, set_dynamic_metadata, check_dynamic_mint
+from user_info import *
+from responses import *
 
 
 api_key = os.getenv('API_KEY')
