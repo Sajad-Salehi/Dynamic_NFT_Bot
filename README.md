@@ -28,8 +28,9 @@ Please install or have installed the following:
 python -m pip install --user virtualenv
 python -m virtualenv --help
 ```
-<br>
+<br/>
 Or, if that doesn't work, via pipx
+
 ```bash
 pipx install virtualenv
 virtualenv --help
